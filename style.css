@@ -1,0 +1,30 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  height: 100px;
+  width: 100px;
+}
+
+#game-status {
+  font-size: 2rem;
+  font-weight: bold;
+}
