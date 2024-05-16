@@ -8,14 +8,14 @@
   font-family: Arial, sans-serif;
 }
 
-.grid-container {
-  border: 2px solid black;
+.gameboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  cursor: pointer;
 }
 
 .cell {
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +27,5 @@
 #game-status {
   font-size: 2rem;
   font-weight: bold;
+  display: none;
 }
