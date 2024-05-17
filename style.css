@@ -8,6 +8,17 @@
   font-family: Arial, sans-serif;
 }
 
+#title {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+span {
+  color: #dc2626;
+}
+
 .gameboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -19,13 +30,67 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
-  height: 100px;
-  width: 100px;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 6rem;
+  height: 150px;
+  width: 150px;
 }
 
-#game-status {
-  font-size: 2rem;
+#player1-input,
+#player2-input {
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #a3a3a3;
+}
+
+.game-status {
+  font-size: 1.5rem;
   font-weight: bold;
   display: none;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+  height: 75px;
+  width: 75px;
+}
+
+#player1-marker,
+#player2-marker {
+  font-size: 3rem;
+}
+
+#player1-marker {
+  color: #450a0a;
+}
+
+#versus {
+  color: #dc2626;
+  font-size: 3rem;
+  font-family: "Poetsen One", sans-serif;
+}
+
+#start,
+#reset {
+  font-size: 1.5rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+#start:active {
+  color: #16a34a;
+}
+#reset:active {
+  color: #a3a3a3;
 }

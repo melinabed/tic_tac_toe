@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Melina's Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
+      <div id="title">Tic <span>Tac</span> Toe</div>
+      <div class="game-status">
+        <div class="status-box">
+          <div id="player1-marker"></div>
+          <div id="player1-name"></div>
+        </div>
+        <div id="versus">VS</div>
+        <div class="status-box">
+          <div id="player2-marker"></div>
+          <div id="player2-name"></div>
+        </div>
+      </div>
       <div class="gameboard"></div>
       <form class="userNames">
-        <input type="text" id="player1" placeholder="player1" />
-        <input type="text" id="player2" placeholder="player2" />
+        <input type="text" id="player1-input" placeholder="player1" />
+        <input type="text" id="player2-input" placeholder="player2" />
       </form>
+
       <div class="buttons">
         <button id="start">Start</button>
         <button id="reset">Reset</button>
       </div>
-      <div id="game-status"><span id="player">X's</span> Turn</div>
     </div>
     <script src="script.js"></script>
   </body>
