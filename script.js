@@ -145,13 +145,24 @@ const displayController = (() => {
   return { displayedNames, displayedMarkers, renderMessage };
 })();
 
+const personStartButton = document.querySelector("#person-start");
+personStartButton.addEventListener("click", () => {
+  document.querySelector(".userNames").style.display = "flex";
+  document.querySelector("#title").style.display = "none";
+  document.querySelector(".start-buttons").style.display = "none";
+  document.querySelector("#welcome").style.display = "flex";
+  document.querySelector("#start").style.display = "flex";
+});
+
 const startButton = document.querySelector("#start");
 startButton.addEventListener("click", () => {
   Game.start();
 
-  document.querySelector(".userNames").style.display = "none";
-  document.querySelector("#title").style.display = "none";
+  document.querySelector("#welcome").style.display = "none";
   document.querySelector(".game-status").style.display = "flex";
+  document.querySelector(".userNames").style.display = "none";
+  startButton.style.display = "none";
+  document.querySelector("#reset").style.display = "flex";
 });
 
 const resetButton = document.querySelector("#reset");
