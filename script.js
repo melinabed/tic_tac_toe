@@ -72,17 +72,17 @@ const Game = (() => {
 
     if (checkWinner(Gameboard.getGameboard(), players[currentPlayer].marker)) {
       gameisOver = true;
-      console.log(`${players[currentPlayer].name} won`);
+      displayController.renderMessage(`${players[currentPlayer].name} won!`);
     } else if (checkDraw(Gameboard.getGameboard())) {
       gameisOver = true;
-      console.log("Draw");
+      displayController.renderMessage("Draw!");
     }
 
     //Swicthes between player1 and player2 markers
     currentPlayer = currentPlayer === 0 ? 1 : 0;
   };
 
-  //Boolean to determin if the gameboard is true or false
+  //Boolean to determine if the gameboard is true or false
   const checkWinner = (board) => {
     //Establishes possible winning combos (horizontal, vertical, and diagnal)
     const winCombos = [
@@ -109,7 +109,7 @@ const Game = (() => {
   //If the gameboard isn't called by the checkWinner function, the game is a draw
   //because all cells are filled
   const checkDraw = (board) => {
-    board.every((cell) => cell !== "");
+    return board.every((cell) => cell !== "");
   };
 
   //Updates the gameboard by emptying the indices
@@ -119,6 +119,8 @@ const Game = (() => {
     }
     Gameboard.render();
     gameisOver = false;
+
+    displayController.renderMessage("");
   };
 
   return { start, handleClick, checkWinner, checkDraw, reset };
@@ -136,7 +138,11 @@ const displayController = (() => {
     document.querySelector("#player2-marker").textContent = player2;
   };
 
-  return { displayedNames, displayedMarkers };
+  const renderMessage = (message) => {
+    document.querySelector("#winner").textContent = message;
+  };
+
+  return { displayedNames, displayedMarkers, renderMessage };
 })();
 
 const startButton = document.querySelector("#start");
@@ -144,6 +150,7 @@ startButton.addEventListener("click", () => {
   Game.start();
 
   document.querySelector(".userNames").style.display = "none";
+  document.querySelector("#title").style.display = "none";
   document.querySelector(".game-status").style.display = "flex";
 });
 

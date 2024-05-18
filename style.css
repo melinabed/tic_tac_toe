@@ -1,3 +1,8 @@
+::backdrop {
+  background-color: #a3a3a3;
+  opacity: 0.75;
+}
+
 .container {
   height: 100vh;
   display: flex;
@@ -6,13 +11,19 @@
   align-items: center;
   gap: 50px;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
-#title {
+#title,
+#winner {
   font-family: "Poetsen One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 5rem;
+}
+
+#winner {
+  font-size: 4rem;
 }
 
 span {
@@ -51,6 +62,12 @@ span {
   justify-content: space-around;
   align-items: center;
   width: 60%;
+}
+
+.userNames {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .status-box {
